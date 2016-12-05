@@ -1,0 +1,13 @@
+@import '../../style/variables';
+
+:global {
+  .Error {
+    margin: 20px 0;
+    color: $danger-color;
+
+    &-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+}

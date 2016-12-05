@@ -1,0 +1,26 @@
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ *
+ * Copyright © 2015-2016 Konstantin Tarkus (@koistya)
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+ @font-face {
+  font-family: 'icomoon';
+  src:
+  url('../../assets/fonts/minicons/fonts/icomoon.ttf') format('truetype'),
+  url('../../assets/fonts/minicons/fonts/icomoon.woff') format('woff'),
+  url('../../assets/fonts/minicons/fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .content {
+    padding: 0 16px;
+  }
+}
+  

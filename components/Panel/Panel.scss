@@ -1,0 +1,14 @@
+@import '../../style/variables';
+
+:global {
+  .Panel {
+    background-color: #fff;
+    border: 1px solid $default-border-color;
+    margin-bottom: 20px;
+    padding: 20px 40px;
+
+    &--primary {
+      border-color: $primary-color;
+    }
+  }
+}
