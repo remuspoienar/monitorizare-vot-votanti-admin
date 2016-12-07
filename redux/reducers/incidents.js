@@ -7,7 +7,7 @@ import {
 const list = (state = [], action) => {
   switch (action.type) {
 
-    case COUNTIES_FETCH_ALL_SUCCESS:
+    case INCIDENTS_FETCH_ALL_SUCCESS:
       return action.data.data;
 
     default:
@@ -30,8 +30,7 @@ const error = (state = null, action) => {
 };
 
 export default combineReducers({
-  byId,
-  visibleIds,
+  list,
   error,
 });
 

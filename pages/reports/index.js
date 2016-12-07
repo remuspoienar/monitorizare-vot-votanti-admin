@@ -5,22 +5,23 @@ import store from '../../redux/reducers';
 import Layout from '../../components/Layout';
 import Panel from '../../components/Panel';
 import Error from '../../components/Error';
-import { getIncidents } from '../../redux/actions/incidentsActions';
-import { getVisibleIncidents } from '../../redux/reducers/incidents';
+import IncidentsByType from '../../components/reports/IncidentsByType'
+
+import { getReports } from '../../redux/actions/reportsActions';
 import s from './styles.css';
 
-class IncidentsPage extends React.Component {
+class ReportsPage extends React.Component {
 
     static propTypes = {
-        incidents: PropTypes.array,
+        data: PropTypes.object,
     };
 
     componentDidMount() {
-        store.dispatch(getIncidents());
+        store.dispatch(getReports());
     }
 
     render() {
-        const { error } = this.props;
+        const { data, error } = this.props;
 
         return (
             <Layout className={s.content}>
@@ -29,7 +30,9 @@ class IncidentsPage extends React.Component {
                         <Error error={error} />
                     }
                     {!error &&
-                        <p>Statistici</p>
+                        <div>
+                          <IncidentsByType data={data.incidentsByType} />
+                        </div>
                     }
                 </Panel>
             </Layout>
@@ -38,10 +41,10 @@ class IncidentsPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    incidents: getVisibleIncidents(state.incidents),
+    data: state.reports.data,
     error: state.incidents.error,
 });
 
 export default connect(
     mapStateToProps
-)(IncidentsPage);
+)(ReportsPage);

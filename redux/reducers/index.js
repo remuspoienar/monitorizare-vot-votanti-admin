@@ -2,12 +2,14 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import incidents from './incidents';
 import counties from './counties';
+import incidents from './incidents';
+import reports from './reports';
 
 const rootReducer = combineReducers({
   counties,
   incidents,
+  reports,
 });
 
 const middleware = [thunk];
