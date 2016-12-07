@@ -3,8 +3,10 @@ import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import incidents from './incidents';
+import counties from './counties';
 
 const rootReducer = combineReducers({
+  counties,
   incidents,
 });
 

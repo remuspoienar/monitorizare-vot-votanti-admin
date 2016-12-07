@@ -1,0 +1,6 @@
+{
+  "name": "CountiesFilter",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CountiesFilter.js"
+}
