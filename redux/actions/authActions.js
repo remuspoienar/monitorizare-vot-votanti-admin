@@ -1,42 +1,25 @@
-import marketApi from '../api/authApi';
+import authApi from '../api/authApi';
 import * as types from '../constants/AuthActionTypes';
 
-// GET AUTHURL
-const getAuthUrlSuccess = markets => ({
-  type: types.AUTH_GET_AUTHURL_SUCCESS,
-  markets,
-});
-
-const getAuthUrlFailure = markets => ({
-  type: types.AUTH_GET_AUTHURL_FAILURE,
-  markets,
-});
-
-export const getAuthUrl = () => dispatch => {
-  dispatch({ type: types.AUTH_GET_AUTHURL_REQUEST });
-
-  marketApi.getAuthUrl(
-    markets => { dispatch(getAuthUrlSuccess(markets)); },
-    error => { dispatch(getAuthUrlFailure(error)); }
-  );
-};
-
-// LOGIN
-const loginSuccess = markets => ({
+const loginSuccess = response => ({
   type: types.AUTH_LOGIN_SUCCESS,
-  markets,
+  response,
 });
 
-const loginFailure = markets => ({
+const loginFailure = error => ({
   type: types.AUTH_LOGIN_FAILURE,
-  markets,
+  error,
 });
 
 export const login = () => dispatch => {
   dispatch({ type: types.AUTH_LOGIN_REQUEST });
 
-  marketApi.login(
-    markets => { dispatch(loginSuccess(markets)); },
+  authApi.login(
+    response => { dispatch(loginSuccess(response)); },
     error => { dispatch(loginFailure(error)); }
   );
+};
+
+export const logout = () => dispatch => {
+  dispatch({ type: types.AUTH_LOGOUT });
 };
