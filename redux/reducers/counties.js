@@ -31,4 +31,4 @@ export default combineReducers({
   error,
 });
 
-export const getAllCounties = (state) => state.list
+export const getCounties = (state) => state.list

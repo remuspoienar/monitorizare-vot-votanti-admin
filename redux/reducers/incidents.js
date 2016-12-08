@@ -34,9 +34,5 @@ export default combineReducers({
   error,
 });
 
-export const getIncident = (state, id) =>
-  state.byId[id];
-
-export const getVisibleIncidents = (state) =>
-  state.visibleIds.map((id) => getIncident(state, id));
-
+export const getIncidents = (state, id) =>
+  state.list
