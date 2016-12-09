@@ -4,6 +4,7 @@ import store from '../../redux/reducers';
 
 import Layout from '../../components/Layout';
 import Panel from '../../components/Panel';
+import Incident from '../../components/incidents/Incident';
 import CountiesFilter from '../../components/CountiesFilter'
 import s from './styles.css';
 
@@ -30,26 +31,31 @@ class IncidentsPage extends React.Component {
   }
 
   render() {
-    const { counties } = this.props;
+    const incidents = this.props.incidents;
 
     return (
       <Layout className={s.content}>
         <Panel>
           <h3 className={s.title}>Sesizari</h3>
-          <div className="mdl-grid">
-            <div className="mdl-cell mdl-cell--6-col">
-              <p>Filters</p>
-            </div>
-            <div className="mdl-cell mdl-cell--6-col">
-              <p>Filters</p>
-            </div>
-            <div className="mdl-cell mdl-cell--6-col">
-              <p>Sesizari</p>
-            </div>
-            <div className="mdl-cell mdl-cell--6-col">
-              Sesizare
-            </div>
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nume</th>
+                <th>Localitate</th>
+                <th>Județ</th>
+                <th>Data și ora</th>
+              </tr>
+            </thead>
+            <tbody>
+            {
+              incidents.map((incident) => {
+                return (
+                  <Incident key={incident.id} incident={incident} />
+                );
+              })
+            }
+            </tbody>
+          </table>
         </Panel>
       </Layout>
     );
@@ -58,7 +64,7 @@ class IncidentsPage extends React.Component {
 
 const mapStateToProps = state => ({
   counties: getCounties(state.counties),
-  incidents: getIncidents(state.counties),
+  incidents: getIncidents(state.incidents),
   countiesError: state.counties.error,
   incidentsError: state.incidents.error,
 });
