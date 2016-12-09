@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import {
   AUTH_LOGIN_SUCCESS,
   AUTH_LOGIN_FAILURE,
-} from '../constants/aUTHActionTypes';
+} from '../constants/AuthActionTypes';
 
 const authenticated = (state = false, action) => {
   switch (action.type) {
@@ -22,7 +22,7 @@ const token = (state = false, action) => {
   switch (action.type) {
 
     case AUTH_LOGIN_SUCCESS:
-      return aciton.data.token;
+      return action.data.token;
 
     case AUTH_LOGIN_FAILURE:
       return false;

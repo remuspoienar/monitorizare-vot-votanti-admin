@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import history from '../../core/history';
 import store from '../../redux/reducers';
 
 import Layout from '../../components/Layout';
@@ -11,13 +12,17 @@ import { login } from '../../redux/actions/authActions';
 class LoginPage extends React.Component {
 
   static propTypes = {
-    authorized: PropTypes.bool,
+    authenticated: PropTypes.bool,
   };
 
   componentWillMount() {
-    if (this.props.authorized) {
-      console.log('redirect to incidents')
+    if (this.props.authenticated) {
+      history.push({ pathname: '/' });
     }
+  }
+
+  onLogin = () => {
+    store.dispatch(login({ email: '', password: '' }));
   }
 
   render() {
@@ -25,6 +30,21 @@ class LoginPage extends React.Component {
       <Layout className={s.content}>
         <Panel>
           <h3 className={s.title}>Login</h3>
+          <div className={s.form}>
+            <div className="mdl-textfield mdl-js-textfield">
+              <input className="mdl-textfield__input" type="email" id="email" />
+              <label className="mdl-textfield__label" htmlFor="email">Email</label>
+            </div>
+            <br/>
+            <div className="mdl-textfield mdl-js-textfield">
+              <input className="mdl-textfield__input" type="password" id="password" />
+              <label className="mdl-textfield__label" htmlFor="password">Parola</label>
+            </div>
+            <br/>
+            <button onClick={this.onLogin} className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Login
+            </button>
+          </div>
         </Panel>
       </Layout>
     );
@@ -32,7 +52,7 @@ class LoginPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  authorized: state.auth.authorized,
+  authenticated: state.auth.authenticated,
 });
 
 export default connect(

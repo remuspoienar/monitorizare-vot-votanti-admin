@@ -16,5 +16,9 @@
   {
     "path": "/settings",
     "page": "./pages/settings"
+  },
+  {
+    "path": "/login",
+    "page": "./pages/auth/login"
   }
 ]
