@@ -10,7 +10,7 @@ const IncidentTableRow = (props) => {
 
     if(incident.status === IncidentStatusTypes.APPROVED) {
       statusClassName = "incident-approved";
-    } else if(incident.status === IncidentStatusTypes.PENDING) {
+    } else if(incident.status === IncidentStatusTypes.REJECTED) {
       statusClassName = "incident-rejected";
     }
 
