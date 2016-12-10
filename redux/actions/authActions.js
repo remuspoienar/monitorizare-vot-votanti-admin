@@ -1,6 +1,5 @@
 import authApi from '../api/authApi';
 import * as types from '../constants/AuthActionTypes';
-import history from '../../core/history';
 
 const loginSuccess = response => ({
   type: types.AUTH_LOGIN_SUCCESS,
@@ -12,17 +11,17 @@ const loginFailure = error => ({
   error,
 });
 
-export const login = () => dispatch => {
-  dispatch({ type: types.AUTH_LOGIN_SUCCESS, data: {token: ''} });
-  history.push({ pathname: '/' });
-
- /*
- dispatch({ type: types.AUTH_LOGIN_REQUEST });
-
+export const login = (payload) => dispatch => {
+  dispatch({ type: types.AUTH_LOGIN_REQUEST });
+  console.log(payload);
   authApi.login(
-    response => {dispatch(loginSuccess(response)); },
-    error => { dispatch(loginFailure(error)); }
-  );*/
+    response => {
+      dispatch(loginSuccess(response));
+    },
+    error => { dispatch(loginFailure(error)); },
+    payload
+
+  );
 };
 
 export const logout = () => dispatch => {

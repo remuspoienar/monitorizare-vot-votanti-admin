@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import history from '../../core/history';
 import store from '../../redux/reducers';
 
 import Layout from '../../components/Layout';
@@ -23,6 +24,11 @@ class IncidentsPage extends React.Component {
   };
 
   componentWillMount() {
+    if (!this.props.authenticated) {
+      history.push({ pathname: '/login' });
+      return;
+    }
+
     if (this.props.counties.length === 0) {
       store.dispatch(fetchCounties());
     }
@@ -64,6 +70,7 @@ class IncidentsPage extends React.Component {
 
 const mapStateToProps = state => ({
   counties: getCounties(state.counties),
+  authenticated: state.auth.authenticated,
   incidents: getIncidents(state.incidents),
   countiesError: state.counties.error,
   incidentsError: state.incidents.error,
