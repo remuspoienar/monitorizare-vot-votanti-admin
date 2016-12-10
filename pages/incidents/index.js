@@ -5,7 +5,8 @@ import store from '../../redux/reducers';
 
 import Layout from '../../components/Layout';
 import Panel from '../../components/Panel';
-import Incident from '../../components/incidents/Incident';
+import Button from '../../components/Button';
+import IncidentsTable from '../../components/incidents/IncidentsTable';
 import CountiesFilter from '../../components/CountiesFilter'
 import s from './styles.css';
 
@@ -36,32 +37,28 @@ class IncidentsPage extends React.Component {
     store.dispatch(fetchIncidents());
   }
 
+  refresh() {
+    console.log(this.forceUpdate);
+    this.forceUpdate();
+  }
+
+
   render() {
-    const incidents = this.props.incidents;
+    const incidents     = this.props.incidents;
 
     return (
-      <Layout className={s.content}>
+      <Layout className={s.content + " " + "incidents-layout"}>
         <Panel>
-          <h3 className={s.title}>Sesizari</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nume</th>
-                <th>Localitate</th>
-                <th>Județ</th>
-                <th>Data și ora</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
-              incidents.map((incident) => {
-                return (
-                  <Incident key={incident.id} incident={incident} />
-                );
-              })
-            }
-            </tbody>
-          </table>
+          <h3 className={s.title}>Lista Sesizari</h3> 
+          <div className = "row">
+              <div className = "col two-thirds">
+                <Button id = "refresh-button" 
+                onClick={() => this.refresh()}
+                type="raised" colored = {true}>Refresh</Button>   
+              </div>
+              <div className = "col one-third"></div>
+          </div> 
+          <IncidentsTable />       
         </Panel>
       </Layout>
     );

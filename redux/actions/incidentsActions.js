@@ -11,6 +11,11 @@ const fetchIncidentsFailure = error => ({
     error,
 });
 
+export const selectIncident = incident => ({
+    type: types.INCIDENTS_SELECTED,
+    incident,
+});
+
 export const fetchIncidents = () => dispatch => {
     dispatch({ type: types.INCIDENTS_FETCH_ALL_REQUEST });
 

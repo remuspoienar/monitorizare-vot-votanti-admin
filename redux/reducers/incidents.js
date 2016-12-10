@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import {
   INCIDENTS_FETCH_ALL_SUCCESS,
   INCIDENTS_FETCH_ALL_FAILURE,
+  INCIDENTS_SELECTED,
 } from '../constants/IncidentsActionTypes';
 
 const list = (state = [], action) => {
@@ -29,10 +30,22 @@ const error = (state = null, action) => {
   }
 };
 
+const selectedIncident = (state = null, action) => {
+  switch (action.type) {
+    case INCIDENTS_SELECTED:
+      return action.incident;
+  }
+  return state;
+}
+
 export default combineReducers({
   list,
+  selectedIncident,
   error,
 });
 
 export const getIncidents = (state, id) =>
   state.list
+
+export const getSelectedIncident = (state) =>
+  state.selectedIncident
