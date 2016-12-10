@@ -50,7 +50,7 @@ class IncidentsTable extends Component {
 	              </div>
 	              <div className = "footer-row">   
                 	<div className = "col">           
-	              		Total in asteptare: { pendingIncidentsCount }
+	              		Total in asteptare: { pendingIncidentsCount } sesizari
 	              	</div>
 	              </div>
               </div>

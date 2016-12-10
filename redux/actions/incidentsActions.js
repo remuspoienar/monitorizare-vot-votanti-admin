@@ -16,6 +16,26 @@ export const selectIncident = incident => ({
     incident,
 });
 
+export const approveIncident = id => dispatch => {
+    dispatch({ type: types.INCIDENTS_APPROVE, id });
+
+    incidentsApi.approveIncident(
+        id,
+        () => { dispatch(fetchIncidents()); },
+        error => { dispatch(fetchIncidentsFailure(error)); }
+    );
+};
+
+export const rejectIncident = id => dispatch => {
+    dispatch({ type: types.INCIDENTS_REJECT, id });
+    
+    incidentsApi.rejectIncident(
+        id,
+        () => { dispatch(fetchIncidents()); },
+        error => { dispatch(fetchIncidentsFailure(error)); }
+    );
+};
+
 export const fetchIncidents = () => dispatch => {
     dispatch({ type: types.INCIDENTS_FETCH_ALL_REQUEST });
 

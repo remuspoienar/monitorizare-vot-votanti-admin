@@ -1,13 +1,13 @@
 import axios from 'axios';
 import config from '../../config';
 
-const getConfig = () => {
+const getConfig = (requiresAuthorization) => {
   return {
     baseURL: config.api.baseURL,
     timeout: 10000,
     headers: {
       'Cache-Control': 'no-cache',
-      Authorization: '',
+      Authorization: requiresAuthorization ? `Bearer {${sessionStorage.getItem("token")}}` : "" ,
       'Content-Type': 'application/json; charset=utf-8',
     },
   };
@@ -22,6 +22,7 @@ const handleError = (error, errorCb) => {
 };
 
 export const get = (url, payload, cb, errorCb) => {
+
   const baseApi = axios.create(getConfig());
   const promise = baseApi.get(url);
   promise.then((response) => {
@@ -39,7 +40,7 @@ export const post = (url, payload, cb, errorCb) => {
 };
 
 export const put = (url, payload, cb, errorCb) => {
-  const baseApi = axios.create(getConfig());
+  const baseApi = axios.create(getConfig(true));
   const promise = baseApi.put(url, payload);
   promise.then((response) => { cb(response.data); })
     .catch((err) => { handleError(err, errorCb); });

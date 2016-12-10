@@ -39,8 +39,7 @@ class IncidentsPage extends React.Component {
   }
 
   refresh() {
-    console.log(this.forceUpdate);
-    this.forceUpdate();
+     store.dispatch(fetchIncidents());
   }
 
 
