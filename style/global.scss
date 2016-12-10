@@ -71,6 +71,7 @@
 
 	#incidents-table {
 		font-size: 13px;
+		width: 100%;
 	}
 
 	#incidents-table-content {		
@@ -150,5 +151,16 @@
 	}
 	/************************************************/
 
+	@media screen and (max-width: 1024px) {
+
+	  .content {
+	    padding: 0 16px;
+	  }
+
+	  .mobile-full-width {
+	  	width: 100%;
+	  }
+
+	}
 
 }

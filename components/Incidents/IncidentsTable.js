@@ -3,10 +3,10 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectIncident } from '../../redux/actions/incidentsActions';
+import * as IncidentStatusTypes from './IncidentStatusTypes';
 
 
 import IncidentTableRow from './IncidentTableRow';
-import IncidentDetails  from './IncidentDetails';
 
 import { getIncidents, getSelectedIncident } from '../../redux/reducers/incidents';
 
@@ -29,12 +29,12 @@ class IncidentsTable extends Component {
   render() {
 
   	const pendingIncidentsCount = this.props.incidents
-  						.filter(incident => incident.status !== "Approved" && incident.status !== "Rejected")
+  						.filter(incident => incident.status === IncidentStatusTypes.PENDING)
   						.length;
 
     return (
-  	<div className = "row">
-              <div id = "incidents-table" className = "col two-thirds">                  
+  	   <div className = "row">
+              <div id = "incidents-table" className = "col">                  
                 <div className = "header-row">
                   <div className = "col one-fifth">Nume</div>
                   <div className = "col one-fifth">Prenume</div>
@@ -47,17 +47,14 @@ class IncidentsTable extends Component {
                 	<div className = "col">           
 	              		{ this.renderList() }
 	              	</div>
-	            </div>
-	            <div className = "footer-row">   
+	              </div>
+	              <div className = "footer-row">   
                 	<div className = "col">           
 	              		Total in asteptare: { pendingIncidentsCount }
 	              	</div>
-	            </div>
+	              </div>
               </div>
-              <div className = "col one-third">
-					<IncidentDetails />
-              </div>
-    </div>
+        </div>
     )
   }
 }
