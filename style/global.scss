@@ -2,4 +2,153 @@
   body {
     background-color: #eee;
   }
+
+  /*-----------------------------
+ INCIDENTS STYLES
+ ------------------------------ */
+
+	.bold {
+		font-weight: 700;
+	}
+
+	.row {
+		margin-left: -.75rem;
+	    margin-right: -.75rem;
+	    padding: 10px 0;
+	}
+
+	.row:after, .header-row:after, .footer-row:after {
+	    content: "";
+	    display: table;
+	    clear: both
+	}
+
+	.row-spacing {
+		margin-top:20px;
+	}
+
+	.header-row, .footer-row {
+		font-weight: 700;
+		margin-left: -.75rem;
+	    margin-right: -.75rem;
+	    padding: 10px 0;
+	}
+
+	.col {
+		float: left;
+	    box-sizing: border-box;
+	    padding: 0 .75rem;
+	    min-height: 1px;
+	}
+
+	.one-fifth {
+		width: 20%;
+	}
+	.one-third {
+		width: 33%;
+	}
+
+	.one-half {
+		width: 50%;
+	}
+
+	.two-thirds {
+		width: 67%;
+	}
+
+	.divider {
+		height: 1px;
+	    overflow: hidden;
+	    background-color: #000;
+	}
+
+	.cell {
+		text-overflow: ellipsis;
+	    display: block;
+	    /* white-space: nowrap; */
+	    overflow: hidden;
+	}
+
+	#incidents-table {
+		font-size: 13px;
+	}
+
+	#incidents-table-content {		
+		max-height: 400px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	#incidents-table-content > .col {
+		width: 100%;
+	}
+
+	#incidents-table .row:hover {
+		background-color: #eeeeee;
+	}
+
+	.incident-approved {
+		background-color: #80cbc4;
+	}
+
+	.incident-rejected {
+		background-color: #ef9a9a;
+	}
+
+	.incident-selected {
+		background-color: #eeeeee;
+	}
+
+	#incident-details {
+		padding: 20px;
+	}
+
+
+
+	.incident-image {
+		width: 116px;
+	}
+
+	.valign-wrapper {
+		display: -webkit-flex;
+	    display: -ms-flexbox;
+	    /* display: flex; */
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+
+	.valign-wrapper .valign {
+	    display: block;
+	}
+
+	.center {
+	    text-align: center;
+	    vertical-align: middle;
+	}
+
+	#empty-incident-details-row {
+		height: 100%;
+		font-size: 14pt;
+    	color: #e1decb;
+	}
+
+	#refresh-button {
+		float: right;
+		background-color: #4caf50;
+		border-radius: 10px;
+	}
+
+
+	/* HACK FOR HEADER OVERFLOWING COMPONENTS LAYOUT */
+	.mdl-layout__container {
+		z-index: 1;
+	}
+
+	main {
+		z-index: 2;
+	}
+	/************************************************/
+
+
 }
