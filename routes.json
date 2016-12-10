@@ -20,5 +20,9 @@
   {
     "path": "/login",
     "page": "./pages/auth/login"
+  },
+  {
+    "path": "/logout",
+    "page": "./pages/auth/logout"
   }
 ]

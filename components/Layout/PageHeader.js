@@ -31,13 +31,13 @@ const PageHeader = ({authenticated}) => {
     <div className={cx('mdl-layout mdl-js-layout', + s.main)}>
       <header className="mdl-layout__header">
         <div className="mdl-layout__header-row">
-          <span className="mdl-layout-title">{title}</span>
+        <Link className="mdl-layout-title" to="/">{title}</Link>
           <div className="mdl-layout-spacer"></div>
           { nav }
         </div>
       </header>
       <div className="mdl-layout__drawer">
-        <span className="mdl-layout-title">{title}</span>
+        <Link className="mdl-layout-title" to="/">{title}</Link>
         { nav }
       </div>
     </div>
