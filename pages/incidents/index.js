@@ -7,6 +7,7 @@ import Layout from '../../components/Layout';
 import Panel from '../../components/Panel';
 import Button from '../../components/Button';
 import IncidentsTable from '../../components/incidents/IncidentsTable';
+import IncidentDetails  from '../../components/incidents/IncidentDetails';
 import CountiesFilter from '../../components/CountiesFilter'
 import s from './styles.css';
 
@@ -38,8 +39,7 @@ class IncidentsPage extends React.Component {
   }
 
   refresh() {
-    console.log(this.forceUpdate);
-    this.forceUpdate();
+     store.dispatch(fetchIncidents());
   }
 
 
@@ -57,8 +57,16 @@ class IncidentsPage extends React.Component {
                 type="raised" colored = {true}>Refresh</Button>   
               </div>
               <div className = "col one-third"></div>
-          </div> 
-          <IncidentsTable />       
+          </div>
+          <div className = "row">
+              <div className = "col two-thirds mobile-full-width">
+                <IncidentsTable /> 
+              </div>
+              <div className = "col one-third mobile-full-width">
+                <IncidentDetails />
+              </div>
+          </div>
+                 
         </Panel>
       </Layout>
     );

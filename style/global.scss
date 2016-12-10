@@ -31,7 +31,7 @@
 		font-weight: 700;
 		margin-left: -.75rem;
 	    margin-right: -.75rem;
-	    padding: 10px 0;
+	    padding: 20px 0;
 	}
 
 	.col {
@@ -57,7 +57,7 @@
 	}
 
 	.divider {
-		height: 1px;
+		height: 2px;
 	    overflow: hidden;
 	    background-color: #000;
 	}
@@ -71,12 +71,14 @@
 
 	#incidents-table {
 		font-size: 13px;
+		width: 100%;
 	}
 
 	#incidents-table-content {		
 		max-height: 400px;
 		overflow-y: scroll;
 		overflow-x: hidden;
+		margin-top: 10px;
 	}
 
 	#incidents-table-content > .col {
@@ -92,7 +94,19 @@
 	}
 
 	.incident-rejected {
-		background-color: #ef9a9a;
+		background-color: #ef5350;
+	}
+
+	.approved-status {
+		color: #66bb6a;
+	}
+
+	.rejected-status {
+		color: #ef5350;
+	}
+
+	.pending-status {
+		color: #9e9e9e;
 	}
 
 	.incident-selected {
@@ -103,10 +117,9 @@
 		padding: 20px;
 	}
 
-
-
 	.incident-image {
 		width: 116px;
+		max-height: 600px;
 	}
 
 	.valign-wrapper {
@@ -135,10 +148,22 @@
 
 	#refresh-button {
 		float: right;
-		background-color: #4caf50;
+		background-color: #66bb6a;
 		border-radius: 10px;
 	}
 
+	.incident-action {
+		width: 110px;
+		border-radius: 10px;
+	}
+
+	#approve-button {
+		background-color: #66bb6a;
+	}
+
+	#reject-button {
+		background-color: #ef5350;
+	}
 
 	/* HACK FOR HEADER OVERFLOWING COMPONENTS LAYOUT */
 	.mdl-layout__container {
@@ -150,5 +175,12 @@
 	}
 	/************************************************/
 
+	@media screen and (max-width: 1024px) {
+
+	  .mobile-full-width {
+	  	width: 100%;
+	  }
+
+	}
 
 }
