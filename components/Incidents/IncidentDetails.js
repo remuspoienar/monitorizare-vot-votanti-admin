@@ -77,15 +77,15 @@ class IncidentDetails extends Component {
           </div>
 
           <div className = "row">
-            <div className = "col"><span className="bold">Judet: </span>{incident.county.name}</div>
+            <div className = "col"><span className="bold">Judet: </span>{incident.county ? incident.county.name : ""}</div>
           </div>
 
           <div className = "row">
-            <div className = "col"><span className="bold">Localitate: </span>{incident.city.name}</div>
+            <div className = "col"><span className="bold">Localitate: </span>{incident.city ? incident.city.name : ""}</div>
           </div>
 
           <div className = "row">
-            <div className = "col"><span className="bold">Sectie: </span>{incident.precinct.precinctNumber}</div>
+            <div className = "col"><span className="bold">Sectie: </span>{incident.precinct ? incident.precinct.precinctNumber : ""}</div>
           </div>
 
           <div className = "row row-spacing">

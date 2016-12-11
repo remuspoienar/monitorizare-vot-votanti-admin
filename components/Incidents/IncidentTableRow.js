@@ -27,8 +27,8 @@ const IncidentTableRow = (props) => {
                                                                 onClick={() => props.selectIncident(incident)}>
       <div className = "col one-fifth"><span className="cell">{lastName}</span></div>
       <div className = "col one-fifth"><span className="cell">{firstName}</span></div>
-      <div className = "col one-fifth"><span className="cell">{incident.city.name}</span></div>
-      <div className = "col one-fifth"><span className="cell">{incident.county.name}</span></div>
+      <div className = "col one-fifth"><span className="cell">{incident.city ? incident.city.name : ""}</span></div>
+      <div className = "col one-fifth"><span className="cell">{incident.county ? incident.county.name : ""}</span></div>
       <div className = "col one-fifth"><span className="cell">{incident.createdAt}</span></div>
     </div>
   );
