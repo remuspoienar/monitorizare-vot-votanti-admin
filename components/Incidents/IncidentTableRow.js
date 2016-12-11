@@ -23,7 +23,7 @@ const IncidentTableRow = (props) => {
     }
 
   return (
-    <div key = {incident.id} className = {"row " + statusClassName + (isSelected ? "incident-selected" : "")} 
+    <div key = {incident.id} className = {"row  incident-row " + statusClassName + (isSelected ? " incident-selected" : "")} 
                                                                 onClick={() => props.selectIncident(incident)}>
       <div className = "col one-fifth"><span className="cell">{lastName}</span></div>
       <div className = "col one-fifth"><span className="cell">{firstName}</span></div>

@@ -19,7 +19,7 @@ class IncidentDetails extends Component {
   }
 
   render() {
-
+    
     const incident = this.props.incident;
     if (!incident) {
       return (
@@ -39,7 +39,7 @@ class IncidentDetails extends Component {
     } else {
       lastName = incident.name;
     }
-    
+      
       switch (incident.status) {
 
         case IncidentStatusTypes.APPROVED:
@@ -163,7 +163,7 @@ function mapStateToProps(state) {
 
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ approveIncident: approveIncident, rejectIncident: rejectIncident }, dispatch);
+  return bindActionCreators({ approveIncident, rejectIncident }, dispatch);
 }
 
 

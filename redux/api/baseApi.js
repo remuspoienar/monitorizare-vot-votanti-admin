@@ -33,7 +33,7 @@ export const get = (url, payload, cb, errorCb) => {
 };
 
 export const post = (url, payload, cb, errorCb) => {
-  const baseApi = axios.create(getConfig());
+  const baseApi = axios.create(getConfig(true));
   const promise = baseApi.post(url, payload);
   promise.then((response) => { cb(response.data); })
     .catch((err) => { handleError(err, errorCb); })
