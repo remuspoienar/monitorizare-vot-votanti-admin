@@ -101,7 +101,7 @@ class IncidentDetails extends Component {
           </div>
           <div className = "row">
             <div className = "col">
-              <img src = {incident.image}  className="incident-image" alt="Avenu" />
+              { incident.image ? <img src = {incident.image}  className="incident-image" /> : "" }
             </div>
           </div>
           { renderActionRow() }
