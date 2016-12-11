@@ -28,6 +28,13 @@ class IncidentsTable extends Component {
 
   render() {
 
+    if(this.props.selectedIncident && this.props.incidents) {
+      const foundIncident = this.props.incidents.find(i => i.id === this.props.selectedIncident.id);
+      if(foundIncident) {
+        this.props.selectIncident(foundIncident);
+      }
+    }
+
   	const pendingIncidentsCount = this.props.incidents
   						.filter(incident => incident.status === IncidentStatusTypes.PENDING)
   						.length;
