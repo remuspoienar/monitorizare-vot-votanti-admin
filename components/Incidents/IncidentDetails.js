@@ -116,7 +116,7 @@ class IncidentDetails extends Component {
     return (
         <div className = "row">
           <div className = "col">
-                <Button id = "reject-button" 
+                <Button id = "reject-button" className = "incident-action"
                 onClick={() => this.props.rejectIncident(this.props.incident.id)}
                 type="raised" colored = {true}>Respinge</Button> 
           </div>
@@ -146,7 +146,7 @@ class IncidentDetails extends Component {
       return (
           <div className = "row">
             <div className = "col">
-                 <Button id = "approve-button" 
+                 <Button id = "approve-button" className = "incident-action"
                   onClick={() => this.props.approveIncident(this.props.incident.id)}
                   type="raised" colored = {true}>Aproba</Button> 
             </div>
