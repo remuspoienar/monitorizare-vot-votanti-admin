@@ -29,7 +29,7 @@ class IncidentDetails extends Component {
       );
     }
 
-    let names = incident.name.split(" ");
+    let names = incident.name.trim().split(" ");
     let firstName = "", lastName = "", statusClassName = "", status = "", renderActionRow;
 
     if (names.length > 1) {
@@ -92,7 +92,7 @@ class IncidentDetails extends Component {
             <div className = "col"><span className="bold">Descriere: </span></div>
           </div>
           <div className = "row">
-            <div className = "col">
+            <div className = "col dont-break-out">
               {incident.description}
             </div>
           </div>

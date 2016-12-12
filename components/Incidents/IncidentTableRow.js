@@ -4,7 +4,7 @@ import * as IncidentStatusTypes from './IncidentStatusTypes';
 const IncidentTableRow = (props) => {
 
     const incident  = props.incident;
-    let names       = incident.name.split(" ");
+    let names       = incident.name.trim().split(" ");
     let firstName   = "", lastName = "", statusClassName = "";
     const isSelected = props.selectedIncident != null && incident.id === props.selectedIncident.id;
 
