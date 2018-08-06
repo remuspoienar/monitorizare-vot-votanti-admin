@@ -1,91 +1,42 @@
-# React Static Boilerplate &nbsp; [![Build Status](http://img.shields.io/travis/kriasoft/react-static-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/kriasoft/react-static-boilerplate) [![To-do](https://img.shields.io/waffle/label/kriasoft/react-static-boilerplate/to-do.svg?style=flat-square)](https://waffle.io/kriasoft/react-static-boilerplate) [![Online Chat](http://img.shields.io/badge/chat_room-%23react--static--boilerplate-blue.svg?style=flat-square)](https://gitter.im/kriasoft/react-static-boilerplate)
+# Monitorizare Vot - Admin app for the platform for elections observers
 
-> [**React Static Boilerplate**](https://github.com/kriasoft/react-static-boilerplate) (RSB) is an
-> opinionated boilerplate and tooling for creating modern stand-alone web applications (aka
-> [SPA](https://en.wikipedia.org/wiki/Single-page_application)s) for a serverless architecture. RSB
-> significantly reduces cost by eliminating the need for servers such as EC2 instances because the
-> entire site can be hosted directly from CDN ([Firebase](https://www.firebase.com/), [GitHub
-> Pages](https://pages.github.com/), [Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html),
-> or other similar cloud storage). Sites built with RSB cab be fully functional with REST API or
-> GraphQL calls to micro-services such as [Amazon Lambda](https://aws.amazon.com/lambda/),
-> [Azure Functions](https://azure.microsoft.com/services/functions/), or dynamic Docker endpoints
-> hosted on [DigitalOcean](https://www.digitalocean.com/?refcode=eef302dbae9f&utm_source=github&utm_medium=oss_sponsorships&utm_campaign=opencollective).
-> RSB demonstrates how to use component-based UI development approach with best of breed
-> technologies including [React](http://facebook.github.io/react/), [Redux](http://redux.js.org/),
-> [Babel](http://babeljs.io/), [Webpack](https://webpack.github.io/), [Browsersync](https://browsersync.io/),
-> [React Hot Loader](http://gaearon.github.io/react-hot-loader/) and more.
+[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/monitorizare-vot-votanti-admin.svg?style=for-the-badge)]() [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/monitorizare-vot-votanti-admin.svg?style=for-the-badge)]() [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
 
-**The work is being sponsored by:**
+[See the project live](http://monitorizarevot.ro/)
 
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/0/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/0/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/1/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/1/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/2/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/2/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/3/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/3/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/4/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/4/avatar.svg" height="64">
-</a>
+Monitorizare Vot is a mobile app for monitoring elections by authorized observers. They can use the app in order to offer a real-time snapshot on what is going on at polling stations and they can report on any noticeable irregularities. 
 
+The NGO-s with authorized observers for monitoring elections have real time access to the data the observers are transmitting therefore they can report on how voting is evolving and they can quickly signal to the authorities where issues need to be solved. 
 
-### Features
+Moreover, where it is allowed, observers can also photograph and film specific situations and send the images to the NGO they belong to. 
 
-&nbsp; &nbsp; ✓ Modern JavaScript syntax ([ES2015](http://babeljs.io/docs/learn-es2015/)+) via [Babel](http://babeljs.io/), modern CSS syntax via [PostCSS](https://github.com/postcss/postcss)<br>
-&nbsp; &nbsp; ✓ Component-based UI architecture via [React](http://facebook.github.io/react/), [Webpack](https://webpack.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)<br>
-&nbsp; &nbsp; ✓ Application state management /w time-travel debugging via [Redux](http://redux.js.org/) (see [`main.js`](main.js), [`core/store.js`](core/store.js))<br>
-&nbsp; &nbsp; ✓ Routing and navigation via [`path-to-regexp`](https://github.com/pillarjs/path-to-regexp) and [`history`](https://github.com/mjackson/history) (see [`main.js`](main.js), [`core/router.js`](core/router.js), [`utils/routes-loader.js`](utils/routes-loader.js))<br>
-&nbsp; &nbsp; ✓ [Code-splitting](https://github.com/webpack/docs/wiki/code-splitting) and async chunk loading via [Webpack](https://webpack.github.io/) and [ES6 System.import()](http://www.2ality.com/2014/09/es6-modules-final.html)<br>
-&nbsp; &nbsp; ✓ Hot Module Replacement ([HMR](https://webpack.github.io/docs/hot-module-replacement.html)) /w [React Hot Loader](http://gaearon.github.io/react-hot-loader/)<br>
-&nbsp; &nbsp; ✓ Cross-device testing with [Browsersync](https://browsersync.io/) (see [`run.js#start`](run.js))<br>
-&nbsp; &nbsp; ✓ **24/7** community support on [Gitter](https://gitter.im/kriasoft/react-static-boilerplate); customization requests on [Codementor](https://www.codementor.io/koistya)<br>
+The app also has a web version, available for every citizen who wants to report on election irregularities. Monitorizare Vot was launched in 2016 and it has been used for the Romanian parliamentary elections so far, but it is available for further use, regardless of the type of elections or voting process. 
 
-**Demo**: https://rsb.kriasoft.com &nbsp;|&nbsp; **View** [docs](./docs) &nbsp;|&nbsp; **Follow us** on
-[Gitter](https://gitter.im/kriasoft/react-static-boilerplate), [Twitter](https://twitter.com/ReactStatic),
-or [ProductHunt](https://www.producthunt.com/tech/react-static-boilerplate) &nbsp;|&nbsp;
-**Send feedback** to [@koistya](https://twitter.com/koistya)
+[Built with](#built-with) | [Repos and projects](#repos-and-projects) | [Deployment](#deployment) | [Contributing](#contributing) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
 
+## Build with
 
-### Directory Layout
+React.js
 
-```shell
-.
-├── /components/                # Shared or generic UI components
-│   ├── /Button/                # Button component
-│   ├── /Layout/                # Website layout component
-│   ├── /Link  /                # Link component to be used insted of <a>
-│   └── /...                    # etc.
-├── /core/                      # Core framework
-│   ├── /history.js             # Handles client-side navigation
-│   ├── /router.js              # Handles routing and data fetching
-│   └── /store.js               # Application state manager (Redux)
-├── /node_modules/              # 3rd-party libraries and utilities
-├── /pages/                     # React components for web pages
-│   ├── /about/                 # About page
-│   ├── /error/                 # Error page
-│   ├── /home/                  # Home page
-│   └── /...                    # etc.
-├── /public/                    # Static files such as favicon.ico etc.
-│   ├── /dist/                  # The folder for compiled output
-│   ├── favicon.ico             # Application icon to be displayed in bookmarks
-│   ├── robots.txt              # Instructions for search engine crawlers
-│   └── /...                    # etc.
-├── /test/                      # Unit and integration tests
-├── /utils/                     # Utility and helper classes
-│── main.js                     # React application entry point
-│── package.json                # The list of project dependencies and NPM scripts
-│── routes.json                 # This list of application routes
-│── run.js                      # Build automation script, e.g. `node run build`
-└── webpack.config.js           # Bundling and optimization settings for Webpack
-```
+## Repos and projects
 
+Related projects:
 
-### Getting Started
+- client app - https://github.com/code4romania/monitorizare-vot-votanti-client/
+- API - https://github.com/code4romania/monitorizare-vot-votanti-api
+
+Other MV related repos:
+
+- https://github.com/code4romania/monitorizare-vot-admin
+- https://github.com/code4romania/monitorizare-vot-ong
+- https://github.com/code4romania/monitorizare-vot
+- https://github.com/code4romania/monitorizare-vot-android
+- https://github.com/code4romania/monitorizare-vot-ios
+- https://github.com/code4romania/monitorizare-vot-docs
+
+### Deployment
+
+#### Getting Started
 
 **Step 1**. Make sure that you have [Node.js](https://nodejs.org/) v6 or newer installed on your
 machine.
@@ -121,8 +72,7 @@ You can also test your app in release (production) mode by running `node run sta
 with HMR and React Hot Loader disabled by running `node run start --no-hmr`. The app should become
 available at [http://localhost:3000/](http://localhost:3000/).
 
-
-### How to Test
+#### How to Test
 
 The unit tests are powered by [chai](http://chaijs.com/) and [mocha](http://mochajs.org/).
 
@@ -131,8 +81,7 @@ $ npm run lint                  # Check JavaScript and CSS code for potential is
 $ npm run test                  # Run unit tests. Or, `npm run test:watch`
 ```
 
-
-### How to Deploy
+#### How to Deploy
 
 Update `publish` script in the [`run.js`](run.js) file with your full Firebase project name as found
 in your [Firebase console](https://console.firebase.google.com/). Note that this may have an
@@ -153,51 +102,31 @@ If you need just to build the project without publishing it, run:
 $ node run build                # Or, `node run build --release` for production build
 ```
 
+## Contributing
 
-### How to Update
+If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
 
-You can always fetch and merge the recent changes from this repo back into your own project:
+* Fork it (https://github.com/code4romania/monitorizare-vot-votanti-admin/fork)
+* Create your feature branch (git checkout -b feature/fooBar)
+* Commit your changes (git commit -am 'Add some fooBar')
+* Push to the branch (git push origin feature/fooBar)
+* Create a new Pull Request
 
-```shell
-$ git checkout master
-$ git fetch react-static-boilerplate
-$ git merge react-static-boilerplate/master
-$ npm install
-```
+[Pending issues](https://github.com/code4romania/monitorizare-vot-votanti-admin/issues)
 
+## Feedback
 
-### How to Contribute
+* Request a new feature on GitHub.
+* Vote for popular feature requests.
+* File a bug in GitHub Issues.
+* Email us with other feedback contact@code4.ro
 
-Anyone and everyone is welcome to [contribute](CONTRIBUTING.md) to this project. The best way to
-start is by checking our [open issues](https://github.com/kriasoft/react-static-boilerplate/issues),
-[submit a new issues](https://github.com/kriasoft/react-static-boilerplate/issues/new?labels=bug) or
-[feature request](https://github.com/kriasoft/react-static-boilerplate/issues/new?labels=enhancement),
-participate in discussions, upvote or downvote the issues you like or dislike, send [pull
-requests](CONTRIBUTING.md#pull-requests).
+## License
 
+This project is licensed under the MPL 2.0 License - see the [LICENSE](LICENSE) file for details
 
-### Related Projects
+## About Code4Ro
 
-* [React Starter Kit](https://github.com/kriasoft/react-starter-kit) — Isomorphic web app boilerplate (Node.js, React, GraphQL, Webpack, CSS Modules)
-* [ASP.NET Core Starter Kit](https://github.com/kriasoft/aspnet-starter-kit) — Cross-platform single-page application boilerplate (ASP.NET Core, React, Redux)
-* [Babel Starter Kit](https://github.com/kriasoft/babel-starter-kit) — JavaScript library boilerplate (ES2015, Babel, Rollup, Mocha, Chai, Sinon, Rewire)
-* [Universal Router](https://github.com/kriasoft/universal-router) — Isomorphic router for web and single-page applications (SPA)
-* [History](https://github.com/mjackson/history) — HTML5 History API wrapper library that handle navigation in single-page apps
+Started in 2016, Code for Romania is a civic tech NGO, official member of the Code for All network. We have a community of over 500 volunteers (developers, ux/ui, communications, data scientists, graphic designers, devops, it security and more) who work pro-bono for developing digital solutions to solve social problems. #techforsocialgood. If you want to learn more details about our projects [visit our site](https://www.code4.ro/en/) or if you want to talk to one of our staff members, please e-mail us at contact@code4.ro.
 
-
-### Learn More
-
-* [Getting Started with React.js](http://facebook.github.io/react/)
-* [Getting Started with GraphQL and Relay](https://quip.com/oLxzA1gTsJsE)
-* [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
-* [React.js Discussion Board](https://discuss.reactjs.org/)
-* [Learn ES6](https://babeljs.io/docs/learn-es6/), [ES6 Features](https://github.com/lukehoban/es6features#readme)
-
-
-### License
-
-Copyright © 2015-present Kriasoft, LLC. This source code is licensed under the MIT license found in
-the [LICENSE.txt](https://github.com/kriasoft/react-static-boilerplate/blob/master/LICENSE.txt) file.
-
----
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/kriasoft/react-static-boilerplate/graphs/contributors)
+Last, but not least, we rely on donations to ensure the infrastructure, logistics and management of our community that is widely spread accross 11 timezones, coding for social change to make Romania and the world a better place. If you want to support us, [you can do it here](https://code4.ro/en/donate/).
