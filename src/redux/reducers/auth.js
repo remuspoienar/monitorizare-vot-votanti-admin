@@ -4,19 +4,18 @@ import {
   AUTH_LOGIN_SUCCESS,
   AUTH_LOGIN_FAILURE
 } from "../constants/AuthActionTypes";
-import history from "../../core/history";
+// import history from "../../core/history";
 
 const authenticated = (state = false, action) => {
   switch (action.type) {
     case AUTH_LOGIN_SUCCESS:
-      console.log("auth success & redirect");
-      setTimeout(() => {
-        history.push({ pathname: "/" });
-      }, 300);
+      // setTimeout(() => {
+      //   history.push({ pathname: "/" });
+      // }, 300);
       return true;
 
     case AUTH_LOGIN_FAILURE:
-      return true;
+      return false;
 
     case AUTH_LOGOUT:
       return false;
@@ -29,15 +28,15 @@ const authenticated = (state = false, action) => {
 const token = (state = false, action) => {
   switch (action.type) {
     case AUTH_LOGIN_SUCCESS:
-      sessionStorage.setItem("token", action.response.token);
-      return action.response.token;
+      // sessionStorage.setItem("token", action.response.token);
+      return true; //change or remove this whole portion
 
     case AUTH_LOGIN_FAILURE:
-      sessionStorage.removeItem("token");
+      // sessionStorage.removeItem("token");
       return false;
 
     case AUTH_LOGOUT:
-      sessionStorage.removeItem("token");
+      // sessionStorage.removeItem("token");
       return false;
 
     default:
@@ -45,10 +44,10 @@ const token = (state = false, action) => {
   }
 };
 
-const error = (state = [], action) => {
+const error = (state = {}, action) => {
   switch (action.type) {
     case AUTH_LOGIN_SUCCESS:
-      return false;
+      return state;
 
     case AUTH_LOGIN_FAILURE:
       return action.error;

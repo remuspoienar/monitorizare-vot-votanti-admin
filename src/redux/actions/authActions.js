@@ -1,7 +1,7 @@
 import authApi from "../api/authApi";
 import * as types from "../constants/AuthActionTypes";
 
-const loginSuccess = response => ({
+export const loginSuccess = response => ({
   type: types.AUTH_LOGIN_SUCCESS,
   response
 });
@@ -13,9 +13,9 @@ const loginFailure = error => ({
 
 export const login = payload => dispatch => {
   dispatch({ type: types.AUTH_LOGIN_REQUEST });
-  console.log(payload);
   authApi.login(
     response => {
+      localStorage.setItem("token", response.token);
       dispatch(loginSuccess(response));
     },
     error => {
@@ -26,5 +26,6 @@ export const login = payload => dispatch => {
 };
 
 export const logout = () => dispatch => {
+  localStorage.removeItem("token");
   dispatch({ type: types.AUTH_LOGOUT });
 };

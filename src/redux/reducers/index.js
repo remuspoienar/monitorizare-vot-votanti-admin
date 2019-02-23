@@ -1,6 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import createLogger from "redux-logger";
-import thunk from "redux-thunk";
+import { combineReducers } from "redux";
 
 import auth from "./auth";
 import counties from "./counties";
@@ -16,9 +14,4 @@ const rootReducer = combineReducers({
   microcopies
 });
 
-const middleware = [thunk];
-if (process.env.NODE_ENV !== "production") {
-  middleware.push(createLogger());
-}
-
-export default createStore(rootReducer, applyMiddleware(...middleware));
+export default rootReducer;

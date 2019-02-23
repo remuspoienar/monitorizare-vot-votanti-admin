@@ -3,7 +3,7 @@ import config from "../../config";
 
 const getConfig = requiresAuthorization => {
   return {
-    baseURL: config.api.baseURL,
+    baseURL: config.API_URL,
     timeout: 10000,
     headers: {
       "Cache-Control": "no-cache",
